@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 1154250670}
   - component: {fileID: 1154250669}
   - component: {fileID: 1154250668}
+  - component: {fileID: 1154250671}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -345,13 +346,29 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1154250667}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0.69903964, z: 0, w: 0.71508294}
-  m_LocalPosition: {x: 110.5, y: 12.8, z: 4.4}
+  m_LocalRotation: {x: -0, y: -0.7130037, z: -0, w: 0.70116043}
+  m_LocalPosition: {x: 100.4, y: 7.38, z: 5.03}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -88.7, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90.96, z: 0}
+--- !u!114 &1154250671
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1154250667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47a0bc10c34cb9f45a9197692af19695, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1761982681}
+  playerRB: {fileID: 1761982680}
+  Offset: {x: -0.01, y: 3.9, z: -5.1}
+  speed: 5
 --- !u!1001 &1294347519
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -386,7 +403,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2792218741957914664, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.68072087
+      value: 0.7046343
       objectReference: {fileID: 0}
     - target: {fileID: 2792218741957914664, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
       propertyPath: m_LocalRotation.x
@@ -394,7 +411,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2792218741957914664, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.73254293
+      value: -0.7095707
       objectReference: {fileID: 0}
     - target: {fileID: 2792218741957914664, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
       propertyPath: m_LocalRotation.z
@@ -406,7 +423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2792218741957914664, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -94.2
+      value: -90.4
       objectReference: {fileID: 0}
     - target: {fileID: 2792218741957914664, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -415,6 +432,70 @@ PrefabInstance:
     - target: {fileID: 3311311803080157842, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
       propertyPath: m_Name
       value: Mycar1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447512412401745442, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 1761982680}
+    - target: {fileID: 3447512412401745442, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      propertyPath: brakePower
+      value: 500000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447512412401745442, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      propertyPath: breakSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447512412401745442, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      propertyPath: motorPower
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447512412401745442, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      propertyPath: nitroBoost
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447512412401745442, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      propertyPath: steeringCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447512412401745442, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      propertyPath: steeringCurve.m_Curve.Array.data[0].time
+      value: -25.237875
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447512412401745442, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      propertyPath: steeringCurve.m_Curve.Array.data[1].time
+      value: 76.39361
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447512412401745442, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      propertyPath: steeringCurve.m_Curve.Array.data[0].value
+      value: 67.788864
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447512412401745442, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      propertyPath: steeringCurve.m_Curve.Array.data[1].value
+      value: 20.05747
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447512412401745442, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      propertyPath: steeringCurve.m_Curve.Array.data[0].inSlope
+      value: -0.022842405
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447512412401745442, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      propertyPath: steeringCurve.m_Curve.Array.data[1].inSlope
+      value: 0.05491109
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447512412401745442, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      propertyPath: steeringCurve.m_Curve.Array.data[0].outSlope
+      value: -0.022842405
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447512412401745442, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      propertyPath: steeringCurve.m_Curve.Array.data[1].inWeight
+      value: 0.23333332
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447512412401745442, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      propertyPath: steeringCurve.m_Curve.Array.data[1].outSlope
+      value: 0.05491109
+      objectReference: {fileID: 0}
+    - target: {fileID: 3447512412401745442, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      propertyPath: steeringCurve.m_Curve.Array.data[0].outWeight
+      value: 0.28718504
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -483,9 +564,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7720726507797323357, guid: e9be6b9d71ce20345b55b654f6eca5d9, type: 3}
       propertyPath: m_Name
-      value: Free Racing Car Blue Variant
+      value: Car2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7568762161638509293, guid: e9be6b9d71ce20345b55b654f6eca5d9, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -625,13 +707,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5695645982335896733, guid: 6c28e88db890a6f4aa5477e0eee5fcd3, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6c28e88db890a6f4aa5477e0eee5fcd3, type: 3}
+--- !u!54 &1761982680 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 7495443279060062592, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+  m_PrefabInstance: {fileID: 1294347519}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1761982681 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2792218741957914664, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+  m_PrefabInstance: {fileID: 1294347519}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1918809529
 GameObject:
   m_ObjectHideFlags: 0
