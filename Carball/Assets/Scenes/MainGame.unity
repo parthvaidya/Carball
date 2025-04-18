@@ -447,7 +447,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3447512412401745442, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
       propertyPath: motorPower
-      value: 5000
+      value: 15000
       objectReference: {fileID: 0}
     - target: {fileID: 3447512412401745442, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
       propertyPath: nitroBoost
@@ -496,6 +496,22 @@ PrefabInstance:
     - target: {fileID: 3447512412401745442, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
       propertyPath: steeringCurve.m_Curve.Array.data[0].outWeight
       value: 0.28718504
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495443279060062592, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      propertyPath: m_Drag
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495443279060062592, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495443279060062592, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7495443279060062592, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

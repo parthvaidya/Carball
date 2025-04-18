@@ -92,15 +92,7 @@ public class CarController : MonoBehaviour
         UpdateWheel(colliders.RearRightWheel, wheelmesh.RearRightWheel);
     }
 
-    //void ApplySteering()
-    //{
-    //    float steeringAngle = steeringInput * steeringCurve.Evaluate(speed);
-    //    steeringAngle += Vector3.SignedAngle(transform.forward, rb.velocity, Vector3.up);
-    //    steeringAngle = Mathf.Clamp(steeringAngle, -90f, 90f);
-    //    colliders.FrontRightWheel.steerAngle = steeringAngle;
-    //    colliders.FrontLeftWheel.steerAngle = steeringAngle;
-    //}
-
+    
     void ApplySteering()
     {
         // Detect whether the car is moving forward or in reverse
