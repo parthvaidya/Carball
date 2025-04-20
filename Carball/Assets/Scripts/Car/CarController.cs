@@ -83,14 +83,7 @@ public class CarController : MonoBehaviour
         steerInput = input;
     }
 
-    //void GetInputs()
-    //{
-    //    if (control == ControlMode.Keyboard)
-    //    {
-    //        moveInput = Input.GetAxis("Vertical");
-    //        steerInput = Input.GetAxis("Horizontal");
-    //    }
-    //}
+    
 
     void GetInputs()
     {
@@ -116,21 +109,13 @@ public class CarController : MonoBehaviour
         }
     }
 
-    //void Move()
-    //{
-    //    foreach (var wheel in wheels)
-    //    {
-    //        wheel.wheelCollider.motorTorque = moveInput * 600 * maxAcceleration * Time.deltaTime;
-    //    }
-    //}
-
 
     void Move()
     {
         foreach (var wheel in wheels)
         {
             //wheel.wheelCollider.motorTorque = moveInput * 6000 * maxAcceleration * Time.deltaTime;
-            wheel.wheelCollider.motorTorque = moveInput * 600 * maxAcceleration;
+            wheel.wheelCollider.motorTorque = moveInput * 600f * maxAcceleration;
         }
     }
 
@@ -154,36 +139,13 @@ public class CarController : MonoBehaviour
         }
     }
 
-    //void Brake()
-    //{
-    //    if (Input.GetKey(KeyCode.Space) || moveInput == 0)
-    //    {
-    //        foreach (var wheel in wheels)
-    //        {
-    //            wheel.wheelCollider.brakeTorque = 300 * brakeAcceleration * Time.deltaTime;
-    //        }
-
-
-    //    }
-    //    else
-    //    {
-    //        foreach (var wheel in wheels)
-    //        {
-    //            wheel.wheelCollider.brakeTorque = 0;
-    //        }
-
-
-    //    }
-    //}
-
-
     void Brake()
     {
         if (isBraking || moveInput == 0)
         {
             foreach (var wheel in wheels)
             {
-                wheel.wheelCollider.brakeTorque = 30000 * brakeAcceleration * Time.deltaTime;
+                wheel.wheelCollider.brakeTorque = 30000f * brakeAcceleration * Time.deltaTime;
             }
         }
         else
