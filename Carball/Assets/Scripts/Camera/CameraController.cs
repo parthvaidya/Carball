@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
@@ -10,6 +8,14 @@ public class CameraController : MonoBehaviour
     public float speed;
     private Vector3 velocity = Vector3.zero;
     // Start is called before the first frame update
+
+    public void SetTarget(Transform newPlayer, Rigidbody newRB)
+    {
+        player = newPlayer;
+        playerRB = newRB;
+    }
+
+
     void Start()
     {
         
@@ -18,6 +24,11 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
+
+        if (player == null || playerRB == null)
+            return;
+
+
         Vector3 playerForward = (playerRB.velocity + player.transform.forward).normalized;
         transform.position = Vector3.Lerp(transform.position,
             player.position + player.transform.TransformVector(Offset)

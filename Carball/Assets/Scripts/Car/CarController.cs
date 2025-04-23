@@ -1,9 +1,9 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class CarController : MonoBehaviour
+public class CarController : MonoBehaviourPun
 {
     public enum ControlMode
     {
@@ -46,12 +46,17 @@ public class CarController : MonoBehaviour
     public float nitroForce = 15000f;  // Multiplies acceleration when using nitro
     private bool isNitro = false;
     private bool isBraking = false;
-    
 
+    public Rigidbody carRigidbody;
 
 
     void Start()
     {
+
+        if (photonView.IsMine)
+        {
+            Camera.main.GetComponent<CameraController>().SetTarget(transform, carRigidbody);
+        }
         carRb = GetComponent<Rigidbody>();
         carRb.centerOfMass = _centerOfMass;
 
@@ -60,6 +65,7 @@ public class CarController : MonoBehaviour
 
     void Update()
     {
+        if (!photonView.IsMine) return;
         GetInputs();
         AnimateWheels();
         //WheelEffects();
@@ -67,6 +73,7 @@ public class CarController : MonoBehaviour
 
     void LateUpdate()
     {
+        if (!photonView.IsMine) return;
         Move();
         Steer();
         Brake();
@@ -115,7 +122,7 @@ public class CarController : MonoBehaviour
         foreach (var wheel in wheels)
         {
             //wheel.wheelCollider.motorTorque = moveInput * 6000 * maxAcceleration * Time.deltaTime;
-            wheel.wheelCollider.motorTorque = moveInput * 600f * maxAcceleration;
+            wheel.wheelCollider.motorTorque = moveInput * 600f * maxAcceleration; //can use tick , use velocity instad of torque
         }
     }
 
