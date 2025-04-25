@@ -187,6 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b82c15fb8dc32a14f8a27efbc6cde463, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controlType: 0
   moveSpeed: 100
   turnSpeed: 150
   nitroBoost: 200
@@ -194,13 +195,25 @@ MonoBehaviour:
   frontLeftWheel: {fileID: 1401768264281400491}
   frontRightWheel: {fileID: 3095976048948167323}
   maxWheelTurnAngle: 30
+  rearLeftWheel: {fileID: 6366656391688833927}
+  rearRightWheel: {fileID: 2863103425451599012}
 --- !u!4 &1401768264281400491 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3794951908810334882, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
   m_PrefabInstance: {fileID: 2872861605182047753}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &2863103425451599012 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 28636839611146925, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+  m_PrefabInstance: {fileID: 2872861605182047753}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3095976048948167323 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 948405438201742482, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
+  m_PrefabInstance: {fileID: 2872861605182047753}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6366656391688833927 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9188640840458259854, guid: 133308cdb8794744caaef026bde9e1f0, type: 3}
   m_PrefabInstance: {fileID: 2872861605182047753}
   m_PrefabAsset: {fileID: 0}

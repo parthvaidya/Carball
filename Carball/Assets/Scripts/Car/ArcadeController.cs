@@ -1,7 +1,7 @@
 using UnityEngine;
 using Photon.Pun;
 
-public class ArcadeCarController : MonoBehaviourPun
+public class MainCarController : MonoBehaviourPun
 {
     public enum PlayerControlType { Player1, Player2 }
     public PlayerControlType controlType = PlayerControlType.Player1;
@@ -21,6 +21,10 @@ public class ArcadeCarController : MonoBehaviourPun
     public Transform frontLeftWheel;
     public Transform frontRightWheel;
     public float maxWheelTurnAngle = 30f;
+
+    [Header("Rear Visual Wheels")]
+    public Transform rearLeftWheel;
+    public Transform rearRightWheel;
 
     void Start()
     {
@@ -82,13 +86,29 @@ public class ArcadeCarController : MonoBehaviourPun
         }
     }
 
+
+
     void AnimateWheels()
     {
-        if (frontLeftWheel != null && frontRightWheel != null)
-        {
-            float angle = turnInput * maxWheelTurnAngle;
-            frontLeftWheel.localRotation = Quaternion.Euler(0f, angle, 0f);
-            frontRightWheel.localRotation = Quaternion.Euler(0f, angle, 0f);
-        }
+        float steerAngle = turnInput * maxWheelTurnAngle;
+
+        // Steering for front wheels
+        if (frontLeftWheel != null)
+            frontLeftWheel.localRotation = Quaternion.Euler(0f, steerAngle, 0f);
+        if (frontRightWheel != null)
+            frontRightWheel.localRotation = Quaternion.Euler(0f, steerAngle, 0f);
+
+        // Rotation (spinning) for all wheels
+        float wheelSpeed = rb.velocity.magnitude * (moveInput >= 0 ? 1 : -1);
+        float rotationAmount = wheelSpeed * Time.deltaTime * 360f;
+
+        if (frontLeftWheel != null)
+            frontLeftWheel.Rotate(Vector3.right, rotationAmount);
+        if (frontRightWheel != null)
+            frontRightWheel.Rotate(Vector3.right, rotationAmount);
+        if (rearLeftWheel != null)
+            rearLeftWheel.Rotate(Vector3.right, rotationAmount);
+        if (rearRightWheel != null)
+            rearRightWheel.Rotate(Vector3.right, rotationAmount);
     }
 }

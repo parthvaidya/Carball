@@ -159,6 +159,8 @@ MonoBehaviour:
   frontLeftWheel: {fileID: 2191487716034932528}
   frontRightWheel: {fileID: 2876308573244098816}
   maxWheelTurnAngle: 30
+  rearLeftWheel: {fileID: 6144958255515369500}
+  rearRightWheel: {fileID: 3073257995270057791}
 --- !u!4 &2191487716034932528 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8249402610939958893, guid: e9be6b9d71ce20345b55b654f6eca5d9, type: 3}
@@ -167,5 +169,15 @@ Transform:
 --- !u!4 &2876308573244098816 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5474348447618658397, guid: e9be6b9d71ce20345b55b654f6eca5d9, type: 3}
+  m_PrefabInstance: {fileID: 7787420299857066333}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3073257995270057791 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5094730467380696674, guid: e9be6b9d71ce20345b55b654f6eca5d9, type: 3}
+  m_PrefabInstance: {fileID: 7787420299857066333}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6144958255515369500 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4131278022277626177, guid: e9be6b9d71ce20345b55b654f6eca5d9, type: 3}
   m_PrefabInstance: {fileID: 7787420299857066333}
   m_PrefabAsset: {fileID: 0}
