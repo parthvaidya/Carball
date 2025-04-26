@@ -10,6 +10,7 @@ public class GameUIView : MonoBehaviour, IGameEvents
     public void OnScoreChanged(int p1, int p2)
     {
         scoreText.text = $"P1:{p1} - P2:{p2}";
+        Debug.Log($"[GameUIView] Updating score UI: P1={p1}, P2={p2}");
     }
 
     public void OnTimerTick(int secondsLeft)
