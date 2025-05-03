@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     public void GoalScored(int playerIndex)
     {
         model.AddScore(playerIndex);
+        SoundManager.Instance.Play(Sounds.Goal);
         ServiceLocator.GameManager.RestartRound(); // Reset ball and players
     }
 }

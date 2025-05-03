@@ -61,6 +61,7 @@ public class MainCarController : MonoBehaviourPun
         {
             float turn = turnInput * turnSpeed * Time.fixedDeltaTime * Mathf.Sign(moveInput);
             rb.MoveRotation(rb.rotation * Quaternion.Euler(0f, turn, 0f));
+            SoundManager.Instance.Play(Sounds.CarSound);
         }
 
         // Nitro Boost
@@ -86,6 +87,13 @@ public class MainCarController : MonoBehaviourPun
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ball")) // tag your car(s) as "Player"
+        {
+            SoundManager.Instance.Play(Sounds.BallKick);
+        }
+    }
 
 
     void AnimateWheels()

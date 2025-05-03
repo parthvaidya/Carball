@@ -11,15 +11,6 @@ public class GameModel
     public event Action<int, int> OnScoreChanged;
 
 
-
-    //public void AddScore(int playerIndex)
-    //{
-    //    if (playerIndex == 1) Player1Score++;
-    //    else Player2Score++;
-
-    //    OnScoreChanged?.Invoke(Player1Score, Player2Score);
-    //}
-
     public void AddScore(int playerIndex)
     {
         if (playerIndex == 1) Player1Score++;
