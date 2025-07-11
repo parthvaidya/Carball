@@ -5,7 +5,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviourPun, IOnEventCallback
+public class GameManager : MonoBehaviourPunCallbacks, IOnEventCallback
 {
     public GameUIView view;
     public GameController controller;
@@ -24,11 +24,18 @@ public class GameManager : MonoBehaviourPun, IOnEventCallback
         model.OnScoreChanged += view.OnScoreChanged;
     }
 
+    //void Start()
+    //{
+    //    LoadScoreFromRoom();
+    //    StartCoroutine(MatchTimer());
+    //    view.OnScoreChanged(model.Player1Score, model.Player2Score);
+    //}
+
     void Start()
     {
         LoadScoreFromRoom();
-        StartCoroutine(MatchTimer());
         view.OnScoreChanged(model.Player1Score, model.Player2Score);
+        TryStartMatch(); // only starts when both players are present
     }
 
     public void RestartRound()
@@ -45,6 +52,29 @@ public class GameManager : MonoBehaviourPun, IOnEventCallback
     void OnDisable()
     {
         PhotonNetwork.RemoveCallbackTarget(this);
+    }
+
+    void TryStartMatch()
+    {
+        if (PhotonNetwork.CurrentRoom.PlayerCount == 2 && PhotonNetwork.IsMasterClient)
+        {
+            photonView.RPC("StartMatch", RpcTarget.All);
+        }
+    }
+
+    public override void OnPlayerEnteredRoom(Player newPlayer)
+    {
+        Debug.Log("Player joined: " + newPlayer.NickName);
+        TryStartMatch(); // check again now that someone joined
+    }
+
+    [PunRPC]
+    void StartMatch()
+    {
+        if (!matchEnded) // prevent duplicate starts
+        {
+            StartCoroutine(MatchTimer());
+        }
     }
 
     public void OnEvent(EventData photonEvent)
