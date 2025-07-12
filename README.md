@@ -13,7 +13,7 @@
 5. Credits
 
 # Gameplay:
-The video is as follows:
+The video is as follows: https://drive.google.com/file/d/1fv4ZtEkFSRly-eBl7u_FWcnImuRYp7n6/view?usp=sharing
 
 # Features:
 
